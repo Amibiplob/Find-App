@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "image": "https://www.freepnglogos.com/uploads/logo-chatgpt-png/black-chatgpt-logo-circle-symbol-black-png-0.png",
+    "title": "ChatGPT",
+    "companyName": "OpenAI",
+    "description": "AI assistant for chat, writing, ideas, coding, and creative tasks.",
+    "size": 50,
+    "reviews": 25000000,
+    "ratingAvg": 4.8,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 800000 },
+      { "name": "2 star", "count": 700000 },
+      { "name": "3 star", "count": 2000000 },
+      { "name": "4 star", "count": 8000000 },
+      { "name": "5 star", "count": 13500000 }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "https://www.vhv.rs/dpng/d/315-3157813_tiktok-app-icon-png-transparent-png.png",
+    "title": "TikTok",
+    "companyName": "TikTok Pte. Ltd.",
+    "description": "Short videos, trends, music, effects, live streams, and shopping.",
+    "size": 130,
+    "reviews": 45000000,
+    "ratingAvg": 4.4,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 3000000 },
+      { "name": "2 star", "count": 2200000 },
+      { "name": "3 star", "count": 6000000 },
+      { "name": "4 star", "count": 14000000 },
+      { "name": "5 star", "count": 20000000 }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "https://1000logos.net/wp-content/uploads/2018/03/logo-wa.png",
+    "title": "WhatsApp Messenger",
+    "companyName": "WhatsApp LLC",
+    "description": "Secure messaging, calls, groups, and media sharing.",
+    "size": 70,
+    "reviews": 100000000,
+    "ratingAvg": 4.7,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 4500000 },
+      { "name": "2 star", "count": 3500000 },
+      { "name": "3 star", "count": 9000000 },
+      { "name": "4 star", "count": 30000000 },
+      { "name": "5 star", "count": 58000000 }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "https://logos-world.net/wp-content/uploads/2024/01/Temu-Logo.png",
+    "title": "Temu: Shop Like a Billionaire",
+    "companyName": "Temu",
+    "description": "Affordable shopping with flash deals and variety.",
+    "size": 115,
+    "reviews": 20000000,
+    "ratingAvg": 4.5,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 1500000 },
+      { "name": "2 star", "count": 1000000 },
+      { "name": "3 star", "count": 3000000 },
+      { "name": "4 star", "count": 7000000 },
+      { "name": "5 star", "count": 8500000 }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logosu.png",
+    "title": "Instagram",
+    "companyName": "Instagram, Inc.",
+    "description": "Photos, Reels, Stories, and global connections.",
+    "size": 90,
+    "reviews": 60000000,
+    "ratingAvg": 4.1,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 5500000 },
+      { "name": "2 star", "count": 4500000 },
+      { "name": "3 star", "count": 11000000 },
+      { "name": "4 star", "count": 16000000 },
+      { "name": "5 star", "count": 23000000 }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "https://www.freepnglogos.com/uploads/telegram-logo-9.png",
+    "title": "Telegram",
+    "companyName": "Telegram FZ-LLC",
+    "description": "Fast messaging with channels, groups, and bots.",
+    "size": 75,
+    "reviews": 35000000,
+    "ratingAvg": 4.3,
+    "downloads": 2000000000,
+    "ratings": [
+      { "name": "1 star", "count": 2500000 },
+      { "name": "2 star", "count": 2000000 },
+      { "name": "3 star", "count": 5000000 },
+      { "name": "4 star", "count": 11000000 },
+      { "name": "5 star", "count": 15000000 }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "https://www.clipartmax.com/png/middle/144-1445555_facebook-icon-for-walmsley-society-facebook-iphone-icon-png.png",
+    "title": "Facebook",
+    "companyName": "Meta Platforms, Inc.",
+    "description": "Connect with friends, family, and communities.",
+    "size": 80,
+    "reviews": 130000000,
+    "ratingAvg": 4.4,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 9000000 },
+      { "name": "2 star", "count": 7000000 },
+      { "name": "3 star", "count": 18000000 },
+      { "name": "4 star", "count": 40000000 },
+      { "name": "5 star", "count": 60000000 }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "https://freepngimg.com/save/155851-chrome-logo-official-google-pic/3000x2000",
+    "title": "Google Chrome",
+    "companyName": "Google LLC",
+    "description": "Fast browser with sync and security features.",
+    "size": 60,
+    "reviews": 80000000,
+    "ratingAvg": 4.5,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 3000000 },
+      { "name": "2 star", "count": 2000000 },
+      { "name": "3 star", "count": 8000000 },
+      { "name": "4 star", "count": 25000000 },
+      { "name": "5 star", "count": 42000000 }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "https://pngimg.com/d/youtube_PNG15.png",
+    "title": "YouTube",
+    "companyName": "Google LLC",
+    "description": "Videos, Shorts, live streams, and music.",
+    "size": 100,
+    "reviews": 120000000,
+    "ratingAvg": 4.2,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 10000000 },
+      { "name": "2 star", "count": 8000000 },
+      { "name": "3 star", "count": 20000000 },
+      { "name": "4 star", "count": 35000000 },
+      { "name": "5 star", "count": 47000000 }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg",
+    "title": "Google Drive",
+    "companyName": "Google LLC",
+    "description": "Cloud storage, file sharing, and backup.",
+    "size": 90,
+    "reviews": 12000000,
+    "ratingAvg": 4.5,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 400000 },
+      { "name": "3 star", "count": 1100000 },
+      { "name": "4 star", "count": 3500000 },
+      { "name": "5 star", "count": 6500000 }
+    ]
+  },
+  {
+    "id": 11,
+    "image": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.svg",
+    "title": "Google Gemini",
+    "companyName": "Google LLC",
+    "description": "AI for queries, planning, and multimodal tasks.",
+    "size": 55,
+    "reviews": 18000000,
+    "ratingAvg": 4.6,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 700000 },
+      { "name": "2 star", "count": 600000 },
+      { "name": "3 star", "count": 1800000 },
+      { "name": "4 star", "count": 6000000 },
+      { "name": "5 star", "count": 9800000 }
+    ]
+  },
+  {
+    "id": 12,
+    "image": "https://e7.pngegg.com/pngimages/420/432/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle.png",
+    "title": "Spotify: Music and Podcasts",
+    "companyName": "Spotify AB",
+    "description": "Music streaming, playlists, podcasts, and recommendations.",
+    "size": 95,
+    "reviews": 70000000,
+    "ratingAvg": 4.4,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 4000000 },
+      { "name": "2 star", "count": 3000000 },
+      { "name": "3 star", "count": 9000000 },
+      { "name": "4 star", "count": 20000000 },
+      { "name": "5 star", "count": 33000000 }
+    ]
+  }
+]

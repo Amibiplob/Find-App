@@ -45,7 +45,7 @@ export default function Banner() {
         </h1>
         <div className="flex justify-center gap-24">
           {totalStats.map((item) => (
-            <div className="">
+            <div key={item.label} className="">
               <p className="text-xs">{item.label}</p>
               <p className="text-5xl m-4">{item.value}</p>
               <p className="text-xs">{item.sub}</p>

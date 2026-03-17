@@ -26,7 +26,6 @@ export default function Trending() {
                   className="h-4 w-4"
                   src="/src/assets/icon-downloads.png"
                   alt=""
-                  srcset=""
                 />
                 56
               </button>
@@ -35,7 +34,6 @@ export default function Trending() {
                   className="h-4 w-4"
                   src="/src/assets/icon-ratings.png"
                   alt=""
-                  srcset=""
                 />
                 56
               </button>
