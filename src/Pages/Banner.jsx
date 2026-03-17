@@ -1,6 +1,19 @@
 import React from "react";
 
 export default function Banner() {
+  const totalStats = [
+    {
+      label: "Total Downloads",
+      value: "29.6M",
+      sub: "21% More Than Last Month",
+    },
+    {
+      label: "Total Reviews",
+      value: "906K",
+      sub: "46% More Than Last Month",
+    },
+    { label: "Active Apps", value: "132+", sub: "31 More Will Launch" },
+  ];
   return (
     <div className="text-center">
       <h1 className="text-5xl mb-5 mt-9 font-bold">
@@ -26,6 +39,20 @@ export default function Banner() {
         </a>
       </div>
       <img src="/src/assets/hero.png" alt="Banner" className="mx-auto" />
+      <div className="bg-violet-500 text-white p-12">
+        <h1 className="text-4xl pb-4">
+          Trusted By Millions, Built For You
+        </h1>
+        <div className="flex justify-center gap-24">
+          {totalStats.map((item) => (
+            <div className="">
+              <p className="text-xs">{item.label}</p>
+              <p className="text-5xl m-4">{item.value}</p>
+              <p className="text-xs">{item.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
