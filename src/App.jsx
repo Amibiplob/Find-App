@@ -1,4 +1,5 @@
 import Banner from "./Pages/Banner";
+import Footer from "./Pages/Footer";
 import Navbar from "./Pages/Navbar";
 import Trending from "./Pages/Trending";
 
@@ -7,7 +8,8 @@ function App() {
     <div className="container mx-auto">
       <Navbar />
       <Banner />
-      <Trending/>
+      <Trending />
+      <Footer/>
     </div>
   );
 }
