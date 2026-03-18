@@ -4,7 +4,11 @@ import { Link } from "react-router";
 import { NavLink } from "react-router";
 
 export default function Navbar() {
-  const navItem = ["Home", "Apps", "Installation"];
+const navItem = [
+  { path: "/", label: "Home" },
+  { path: "/apps", label: "Apps" },
+  { path: "/installapps", label: "Installation" },
+];
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -30,14 +34,14 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {navItem.map((item) => (
-              <li key={item}>
+              <li key={item.label}>
                 <NavLink
-                  to={item}
+                  to={item.path}
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
                   }
                 >
-                  {item}
+                  {item.label}
                 </NavLink>
               </li>
             ))}
@@ -53,14 +57,14 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navItem.map((item) => (
-            <li key={item}>
+            <li key={item.label}>
               <NavLink
-                to={item}
+                to={item.path}
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
                 }
               >
-                {item}
+                {item.label}
               </NavLink>
             </li>
           ))}

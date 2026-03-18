@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "./Pages/Root";
 import Home from "./Pages/Home";
 import ErrorPage from "./Pages/ErrorPage";
+import InstallApps from "./Pages/InstallApps";
 
 function App() {
   // const fetchingData = fetch("/FakeDB.json").then((res) => res.json());
@@ -29,6 +30,11 @@ function App() {
           path: "/apps",
           loader: () => fetch("/FakeDB.json").then((res) => res.json()),
           Component: AllApps,
+        },
+        {
+          path: "/installapps",
+          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
+          Component: InstallApps,
         },
       ],
     },
