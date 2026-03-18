@@ -2,7 +2,6 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
-import reviewImg from "../assets/icon-review.png";
 export default function InstallApps() {
   const allApps = useLoaderData();
   console.log(allApps[0]);
@@ -51,7 +50,7 @@ export default function InstallApps() {
                 alt={item.title}
               />
               <div className="flex flex-col justify-around">
-                <h2 className="card-title">card rehyesyheryhseryhe</h2>
+                <h2 className="card-title">{item.title}</h2>
                 <div className="flex gap-4">
                   <p className="flex items-center gap-1">
                     <img className="h-4 w-4" src={downloadImg} alt="" />

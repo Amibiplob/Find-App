@@ -5,6 +5,7 @@ import Root from "./Pages/Root";
 import Home from "./Pages/Home";
 import ErrorPage from "./Pages/ErrorPage";
 import InstallApps from "./Pages/InstallApps";
+import AppsDetails from "./Pages/AppsDetails";
 
 function App() {
   // const fetchingData = fetch("/FakeDB.json").then((res) => res.json());
@@ -35,6 +36,11 @@ function App() {
           path: "/installapps",
           loader: () => fetch("/FakeDB.json").then((res) => res.json()),
           Component: InstallApps,
+        },
+        {
+          path: "/appsdetails/:id",
+          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
+          Component: AppsDetails,
         },
       ],
     },

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router";
-
+import { Link, useLoaderData } from "react-router";
+import appNotFound from "../assets/App-Error.png";
 export default function AllApps() {
   const allApps = useLoaderData();
   console.log(allApps);
@@ -51,17 +51,22 @@ export default function AllApps() {
         </div>
       </div>
       {sortMethod.length == 0 && (
-        <div className="text-center m-8">
-          <h1 className="text-4xl font-bold p-5">OPPS!! APP NOT FOUND</h1>
-          <p>
-            The App you are requesting is not found on our system. please try
-            another apps
-          </p>
+        <div>
+          <div className="mx-auto">
+            <img src={appNotFound} alt="Not Found" className="mx-auto m-8" />
+          </div>
+          <div className="text-center m-8">
+            <h1 className="text-4xl font-bold p-5">OPPS!! APP NOT FOUND</h1>
+            <p>
+              The App you are requesting is not found on our system. please try
+              another apps
+            </p>
+          </div>
         </div>
       )}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 my-5">
         {sortMethod.map((item) => (
-          <div key={item.id}>
+          <Link to={`/appsdetails/${item.id}`} key={item.id}>
             <div className="card bg-base-100 shadow-sm hover:shadow-2xl">
               <figure className="p-3">
                 <img
@@ -92,7 +97,7 @@ export default function AllApps() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
