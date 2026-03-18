@@ -11,7 +11,10 @@ function App() {
     <div className="container mx-auto">
       <Navbar />
       <Banner />
-      <Trending />
+      <Suspense fallback={<p>⌛Downloading...</p>}>
+        <Trending fetchingData={fetchingData} />
+      </Suspense>
+
       <Suspense fallback={<p>⌛Downloading...</p>}>
         <AllApps fetchingData={fetchingData} />
       </Suspense>

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 
-export default function Trending() {
+export default function Trending({ fetchingData }) {
+  const allApps = use(fetchingData);
+  // console.log(allApps[0]);
+  const trendingApps = [...allApps].filter((item) => item.ratingAvg > 4.5);
+  // console.log(trendingApps)
   return (
     <div className="pt-5">
       <div className="text-center">
@@ -9,37 +13,41 @@ export default function Trending() {
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
-      <div>
-        <div className="card bg-base-100 w-80 shadow-sm">
-          <figure className="p-3">
-            <img
-              className="rounded-md"
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body pt-0 p-3 ">
-            <h2 className="card-title">Card Title</h2>
-            <div className="card-actions justify-between">
-              <button className="flex items-center gap-1 bg-neutral-200 rounded-md p-1">
+      <div className="grid grid-cols-4 gap-4">
+        {trendingApps.map((item) => (
+          <div key={item.id}>
+            <div className="card bg-base-100 shadow-sm hover:shadow-2xl">
+              <figure className="p-3">
                 <img
-                  className="h-4 w-4"
-                  src="/src/assets/icon-downloads.png"
-                  alt=""
+                  className="rounded-md w-fit h-48 bg-neutral-100"
+                  src={item.image}
+                  alt={item.title}
                 />
-                56
-              </button>
-              <button className="flex items-center gap-1 bg-neutral-200 rounded-md p-1">
-                <img
-                  className="h-4 w-4"
-                  src="/src/assets/icon-ratings.png"
-                  alt=""
-                />
-                56
-              </button>
+              </figure>
+              <div className="card-body pt-0 p-3 ">
+                <h2 className="card-title">{item.title}</h2>
+                <div className="card-actions justify-between">
+                  <button className="flex items-center gap-1 bg-neutral-200 rounded-md p-1">
+                    <img
+                      className="h-4 w-4"
+                      src="/src/assets/icon-downloads.png"
+                      alt=""
+                    />
+                    {item.downloads / 1000000}M
+                  </button>
+                  <button className="flex items-center gap-1 bg-neutral-200 rounded-md p-1">
+                    <img
+                      className="h-4 w-4"
+                      src="/src/assets/icon-ratings.png"
+                      alt=""
+                    />
+                    {item.ratingAvg}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
       <div className="text-center my-5">
         <button className="btn btn-wide">Show All</button>
