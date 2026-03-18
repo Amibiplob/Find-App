@@ -1,8 +1,7 @@
-import React, { use } from "react";
+import { Link } from "react-router";
 
-export default function Trending({ fetchingData }) {
-  const allApps = use(fetchingData);
-  // console.log(allApps[0]);
+export default function Trending({allApps}) {
+  // console.log(allApps);
   const trendingApps = [...allApps].filter((item) => item.ratingAvg > 4.5);
   // console.log(trendingApps)
   return (
@@ -50,7 +49,10 @@ export default function Trending({ fetchingData }) {
         ))}
       </div>
       <div className="text-center my-5">
-        <button className="btn btn-wide">Show All</button>
+        <Link to="/apps" className="btn btn-wide">
+          Show All
+        </Link>
+      
       </div>
     </div>
   );

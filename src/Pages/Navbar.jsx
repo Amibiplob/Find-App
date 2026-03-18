@@ -1,5 +1,7 @@
 import { Github } from "lucide-react";
 import React from "react";
+import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 export default function Navbar() {
   const navItem = ["Home", "Apps", "Installation"];
@@ -29,21 +31,37 @@ export default function Navbar() {
           >
             {navItem.map((item) => (
               <li key={item}>
-                <a>{item}</a>
+                <NavLink
+                  to={item}
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  {item}
+                </NavLink>
               </li>
             ))}
           </ul>
         </div>
         <div className="flex items-center">
-          <img src="/src/assets/logo.png" className="h-8 w-8" alt="Logo" />
-          <a className="btn btn-ghost text-xl pl-0">Find App</a>
+          <Link to="/" className="btn btn-ghost text-xl pl-0">
+            <img src="/src/assets/logo.png" className="h-8 w-8" alt="Logo" />
+            <span> Find App</span>
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navItem.map((item) => (
             <li key={item}>
-              <a>{item}</a>
+              <NavLink
+                to={item}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
+              >
+                {item}
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -1,24 +1,42 @@
-import { Suspense } from "react";
 import AllApps from "./Pages/AllApps";
-import Banner from "./Pages/Banner";
-import Footer from "./Pages/Footer";
-import Navbar from "./Pages/Navbar";
-import Trending from "./Pages/Trending";
+
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Root from "./Pages/Root";
+import Home from "./Pages/Home";
+import ErrorPage from "./Pages/ErrorPage";
 
 function App() {
-  const fetchingData = fetch("/FakeDB.json").then((res) => res.json());
+  // const fetchingData = fetch("/FakeDB.json").then((res) => res.json());
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      Component: Root,
+      ErrorBoundary: ErrorPage,
+      children: [
+        {
+          index: true,
+          path: "/",
+          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
+          Component: Home,
+        },
+        {
+          index: true,
+          path: "home",
+          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
+          Component: Home,
+        },
+        {
+          path: "/apps",
+          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
+          Component: AllApps,
+        },
+      ],
+    },
+  ]);
   return (
     <div className="container mx-auto">
-      <Navbar />
-      <Banner />
-      <Suspense fallback={<p>⌛Downloading...</p>}>
-        <Trending fetchingData={fetchingData} />
-      </Suspense>
-
-      <Suspense fallback={<p>⌛Downloading...</p>}>
-        <AllApps fetchingData={fetchingData} />
-      </Suspense>
-      <Footer />
+      <RouterProvider router={router} />
+      ,
     </div>
   );
 }

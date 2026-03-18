@@ -1,8 +1,9 @@
-import React, { use, useState } from "react";
+import { useState } from "react";
+import { useLoaderData } from "react-router";
 
-export default function AllApps({ fetchingData }) {
-  const allApps = use(fetchingData);
-  // console.log(allApps[0]);
+export default function AllApps() {
+  const allApps = useLoaderData();
+  console.log(allApps);
   const sortDefault = [...allApps];
   const sortHighToLow = [...allApps].sort((a, b) => b.downloads - a.downloads);
   const sortLowToHigh = [...allApps].sort((a, b) => a.downloads - b.downloads);

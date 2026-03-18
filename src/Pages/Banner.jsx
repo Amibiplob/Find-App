@@ -1,5 +1,5 @@
 import React from "react";
-
+import bannerImg from '../assets/hero.png'
 export default function Banner() {
   const totalStats = [
     {
@@ -38,7 +38,7 @@ export default function Banner() {
           App Store
         </a>
       </div>
-      <img src="/src/assets/hero.png" alt="Banner" className="mx-auto" />
+      <img src={bannerImg} alt="Banner" className="mx-auto" />
       <div className="bg-violet-500 text-white p-12">
         <h1 className="text-4xl pb-4">
           Trusted By Millions, Built For You
