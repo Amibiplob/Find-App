@@ -14,7 +14,7 @@ export default function Trending({allApps}) {
       </div>
       <div className="grid grid-cols-4 gap-4">
         {trendingApps.map((item) => (
-          <div key={item.id}>
+         <Link to={`/appsdetails/${item.id}`} key={item.id}>
             <div className="card bg-base-100 shadow-sm hover:shadow-2xl">
               <figure className="p-3">
                 <img
@@ -45,7 +45,7 @@ export default function Trending({allApps}) {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="text-center my-5">

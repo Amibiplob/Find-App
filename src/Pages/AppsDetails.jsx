@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
+import Charts from "./Charts";
 export default function AppsDetails() {
   let params = useParams();
   //   console.log(params);
@@ -14,7 +15,8 @@ export default function AppsDetails() {
     title,
     description,
     companyName,
-    raratings,
+    reviews,
+    ratings,
     ratingAvg,
     size,
     downloads,
@@ -49,7 +51,10 @@ export default function AppsDetails() {
           </div>
         </div>
       </div>
-      <div className="border-t">
+      <div className="border-y py-5 my-3">
+        <Charts ratings={ratings} />
+      </div>
+      <div className="">
         <h1 className="text-3xl my-3">Description</h1>
         <p className="my-4">{description}</p>
       </div>
