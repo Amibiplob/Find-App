@@ -33,7 +33,6 @@ function App() {
         },
         {
           path: "/installapps",
-          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
           Component: InstallApps,
         },
         {

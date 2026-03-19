@@ -2,9 +2,11 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
+import { useApps } from "../Context/AppContext";
 export default function InstallApps() {
-  const allApps = useLoaderData();
-  console.log(allApps[0]);
+
+  const { installedApps, setUninstallApp } = useApps();
+  console.log(installedApps)
   return (
     <div>
       <div className="text-center m-8">
@@ -14,7 +16,7 @@ export default function InstallApps() {
         </p>
       </div>
       <div className="flex justify-between m-6">
-        <h1 className="text-2xl"> {allApps.length} Apps Found</h1>
+        <h1 className="text-2xl"> {installedApps.length} Apps Found</h1>
         <div className="flex gap-4">
           <select
             defaultValue="Sort By Default"
@@ -38,7 +40,7 @@ export default function InstallApps() {
         </div>
       </div>
       <div>
-        {allApps.map((item) => (
+        {installedApps.map((item) => (
           <div
             key={item.id}
             className="flex justify-between items-center shadow-lg hover:shadow-xl py-3"
@@ -67,7 +69,12 @@ export default function InstallApps() {
               </div>
             </figure>
 
-            <button className="btn mr-4">Uninstall</button>
+            <button
+              onClick={() => setUninstallApp(item)}
+              className="btn mr-4"
+            >
+              Uninstall
+            </button>
           </div>
         ))}
       </div>

@@ -3,12 +3,16 @@ import { useLoaderData, useParams } from "react-router";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import Charts from "./Charts";
+import { useApps } from "../Context/AppContext";
 export default function AppsDetails() {
   let params = useParams();
+  const { installedApps, setAllInstalledApps } = useApps();
   //   console.log(params);
+  // console.log(installedApps);
   const allApps = useLoaderData();
+
   const detailsApps = allApps.find((item) => item.id == params.id);
-  //
+
   const {
     id,
     image,
@@ -21,6 +25,8 @@ export default function AppsDetails() {
     size,
     downloads,
   } = detailsApps;
+
+  const installApps = installedApps.find((item) => item.id == id);
   return (
     <div>
       <div className="flex justify-start shadow-lg hover:shadow-xl py-3">
@@ -47,7 +53,13 @@ export default function AppsDetails() {
             <p>{size} MB</p>
           </div>
           <div>
-            <button className="btn">Install Now ({size}) MB</button>
+            <button
+              disabled={installApps}
+              onClick={() => setAllInstalledApps(detailsApps)}
+              className="btn"
+            >
+              { installApps ? "Installed Now":"Install Now"}  ({size}) MB
+            </button>
           </div>
         </div>
       </div>
