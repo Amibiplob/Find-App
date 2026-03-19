@@ -29,7 +29,6 @@ function App() {
         },
         {
           path: "/apps",
-          loader: () => fetch("/FakeDB.json").then((res) => res.json()),
           Component: AllApps,
         },
         {
@@ -48,7 +47,6 @@ function App() {
   return (
     <div className="container mx-auto">
       <RouterProvider router={router} />
-      ,
     </div>
   );
 }

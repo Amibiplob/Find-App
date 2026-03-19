@@ -3,8 +3,8 @@ import Trending from "./Trending";
 import { useLoaderData } from "react-router";
 
 export default function Home() {
-  const allApps = useLoaderData()
-//   console.log(allApps);
+  const allApps = useLoaderData();
+  //   console.log(allApps);
   return (
     <div>
       <Banner />

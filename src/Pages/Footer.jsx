@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import logo from "../assets/logo.png";
 export default function Footer() {
   return (
     <div>
       <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
-        <div className='flex items-center'>
-          <img src="/src/assets/logo.png" className="h-8 w-8" alt="Logo" />
+        <div className="flex items-center">
+          <img src={logo} className="h-8 w-8" alt="Logo" />
           <p>
             Find App Ltd.
             <br />

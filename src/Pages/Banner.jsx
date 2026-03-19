@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImg from '../assets/hero.png'
+import bannerImg from "../assets/hero.png";
 export default function Banner() {
   const totalStats = [
     {
@@ -40,9 +40,7 @@ export default function Banner() {
       </div>
       <img src={bannerImg} alt="Banner" className="mx-auto" />
       <div className="bg-violet-500 text-white p-12">
-        <h1 className="text-4xl pb-4">
-          Trusted By Millions, Built For You
-        </h1>
+        <h1 className="text-4xl pb-4">Trusted By Millions, Built For You</h1>
         <div className="flex justify-center gap-24">
           {totalStats.map((item) => (
             <div key={item.label} className="">

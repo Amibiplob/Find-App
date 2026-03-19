@@ -2,13 +2,14 @@ import { Github } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 import { NavLink } from "react-router";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
-const navItem = [
-  { path: "/", label: "Home" },
-  { path: "/apps", label: "Apps" },
-  { path: "/installapps", label: "Installation" },
-];
+  const navItem = [
+    { path: "/", label: "Home" },
+    { path: "/apps", label: "Apps" },
+    { path: "/installapps", label: "Installation" },
+  ];
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -49,7 +50,7 @@ const navItem = [
         </div>
         <div className="flex items-center">
           <Link to="/" className="btn btn-ghost text-xl pl-0">
-            <img src="/src/assets/logo.png" className="h-8 w-8" alt="Logo" />
+            <img src={logo} className="h-8 w-8" alt="Logo" />
             <span> Find App</span>
           </Link>
         </div>
