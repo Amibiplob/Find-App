@@ -27,6 +27,12 @@ export default function AppsDetails() {
   } = detailsApps;
 
   const installApps = installedApps.find((item) => item.id == id);
+
+  const allInstallApps = (data) => {
+    setAllInstalledApps(data);
+    localStorage.setItem("allApps", JSON.stringify([...installedApps, data]));
+  };
+
   return (
     <div>
       <div className="flex justify-start shadow-lg hover:shadow-xl py-3">
@@ -55,10 +61,10 @@ export default function AppsDetails() {
           <div>
             <button
               disabled={installApps}
-              onClick={() => setAllInstalledApps(detailsApps)}
+              onClick={() => allInstallApps(detailsApps)}
               className="btn"
             >
-              { installApps ? "Installed Now":"Install Now"}  ({size}) MB
+              {installApps ? "Installed Now" : "Install Now"} ({size}) MB
             </button>
           </div>
         </div>

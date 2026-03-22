@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import appNotFound from "../assets/App-Error.png";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import { useApps } from "../Context/AppContext";
 export default function InstallApps() {
-  const { installedApps, setUninstallApp } = useApps();
+  const { installedApps, setUninstallApp, setInstalledApps } = useApps();
   // console.log(installedApps)
+
   const [sortMethod, setSortMethod] = useState(installedApps);
+  useEffect(() => {
+    const allApps = JSON.parse(localStorage.getItem("allApps"));
+    // console.log(allApps);
+    if (allApps) setInstalledApps(allApps);
+    setSortMethod(allApps);
+  }, []);
+
+  // console.log(installedApps);
   // console.log(sortMethod);
+
   const sortHighToLow = [...installedApps].sort(
     (a, b) => b.downloads - a.downloads,
   );
@@ -29,6 +39,8 @@ export default function InstallApps() {
 
   const uninstallApp = (data) => {
     const updatedApps = installedApps.filter((item) => item.id !== data.id);
+    // console.log(updatedApps)
+    localStorage.setItem("allApps", JSON.stringify(updatedApps));
     setSortMethod(updatedApps);
     setUninstallApp(data);
   };

@@ -24,6 +24,7 @@ export function AppsProvider({ children }) {
         allAppsDetails,
         setInitialData,
         installedApps,
+        setInstalledApps,
         setAllInstalledApps,
         setUninstallApp,
       }}
