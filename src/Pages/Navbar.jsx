@@ -39,7 +39,11 @@ export default function Navbar() {
                 <NavLink
                   to={item.path}
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending
+                      ? "my-1"
+                      : isActive
+                        ? "bg-amber-500 my-1"
+                        : " my-1"
                   }
                 >
                   {item.label}
@@ -62,7 +66,7 @@ export default function Navbar() {
               <NavLink
                 to={item.path}
                 className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
+                  isPending ? "pending" : isActive ? "bg-amber-500" : ""
                 }
               >
                 {item.label}
@@ -72,10 +76,10 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">
+        <Link to="https://github.com/Amibiplob/Find-App" className="btn">
           <Github />
           Contribute
-        </a>
+        </Link>
       </div>
     </div>
   );

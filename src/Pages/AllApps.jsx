@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import appNotFound from "../assets/App-Error.png";
 import { useQuery } from "@tanstack/react-query";
 import { useApps } from "../Context/AppContext";
 
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
+import AppErrorPage from "./AppErrorPage";
 
 export default function AllApps() {
   const { allAppsDetails, setInitialData } = useApps();
@@ -48,7 +48,7 @@ export default function AllApps() {
   // console.log(sortLowToHigh);
 
   const searchItem = (value) => {
-    const filterItem = [...sortMethod].filter((item) =>
+    const filterItem = [...allAppsDetails].filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase()),
     );
 
@@ -63,9 +63,11 @@ export default function AllApps() {
           Explore All Apps on the Market developed by us. We code for Millions
         </p>
       </div>
-      <div className="flex justify-between m-6">
-        <h1 className="text-2xl"> {allAppsDetails.length} Apps Found</h1>
-        <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-3 justify-between m-6">
+        <h1 className="text-2xl">
+          {allAppsDetails?.length} Apps Found
+        </h1>
+        <div className="flex flex-col md:flex-row gap-4">
           <select
             defaultValue="Sort By Default"
             className="select appearance-none"
@@ -83,25 +85,12 @@ export default function AllApps() {
             onChange={(e) => searchItem(e.target.value)}
             type="text"
             placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
+            className="input input-bordered md:w-auto"
           />
         </div>
       </div>
-      {sortMethod.length == 0 && (
-        <div>
-          <div className="mx-auto">
-            <img src={appNotFound} alt="Not Found" className="mx-auto m-8" />
-          </div>
-          <div className="text-center m-8">
-            <h1 className="text-4xl font-bold p-5">OPPS!! APP NOT FOUND</h1>
-            <p>
-              The App you are requesting is not found on our system. please try
-              another apps
-            </p>
-          </div>
-        </div>
-      )}
-      <div className="grid grid-cols-4 gap-4 my-5">
+      {sortMethod.length == 0 && <AppErrorPage />}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-5">
         {sortMethod?.map((item) => (
           <Link to={`/appsdetails/${item.id}`} key={item.id}>
             <div className="card bg-base-100 shadow-sm hover:shadow-2xl">

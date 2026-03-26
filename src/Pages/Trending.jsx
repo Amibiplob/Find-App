@@ -4,7 +4,9 @@ import ratingImg from "../assets/icon-ratings.png";
 
 export default function Trending({ allApps }) {
   // console.log(allApps);
-  const trendingApps = [...allApps].filter((item) => item.ratingAvg > 4.5);
+  const trendingApps = [...allApps]
+    .filter((item) => item.ratingAvg > 4)
+    .slice(0, 8);
   // console.log(trendingApps)
   return (
     <div className="pt-5">
@@ -14,7 +16,7 @@ export default function Trending({ allApps }) {
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {trendingApps.map((item) => (
           <Link to={`/appsdetails/${item.id}`} key={item.id}>
             <div className="card bg-base-100 shadow-sm hover:shadow-2xl">
@@ -30,7 +32,7 @@ export default function Trending({ allApps }) {
                 <div className="card-actions justify-between">
                   <button className="flex items-center gap-1 bg-neutral-200 rounded-md p-1">
                     <img className="h-4 w-4" src={downloadImg} alt="" />
-                    {item.downloads / 1000000}M
+                    {(item.downloads / 1000000000).toFixed(1) + "B"}
                   </button>
                   <button className="flex items-center gap-1 bg-neutral-200 rounded-md p-1">
                     <img className="h-4 w-4" src={ratingImg} alt="" />

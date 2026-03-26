@@ -3,6 +3,8 @@ import appNotFound from "../assets/App-Error.png";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import { useApps } from "../Context/AppContext";
+import { Bounce, toast } from "react-toastify";
+import AppErrorPage from "./AppErrorPage";
 export default function InstallApps() {
   const { installedApps, setUninstallApp, setInstalledApps } = useApps();
   // console.log(installedApps)
@@ -43,6 +45,7 @@ export default function InstallApps() {
     localStorage.setItem("allApps", JSON.stringify(updatedApps));
     setSortMethod(updatedApps);
     setUninstallApp(data);
+    toast.success(data.title + " Uninstall Successfuly");
   };
   return (
     <div>
@@ -52,9 +55,11 @@ export default function InstallApps() {
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
-      <div className="flex justify-between m-6">
-        <h1 className="text-2xl"> {sortMethod.length} Apps Found</h1>
-        <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-3 justify-between m-6">
+        <h1 className="text-2xl">
+          {sortMethod?.length} Apps Found
+        </h1>
+        <div className="flex flex-col md:flex-row gap-4">
           <select
             defaultValue="Sort By Default"
             className="select appearance-none"
@@ -72,26 +77,13 @@ export default function InstallApps() {
             onChange={(e) => searchItem(e.target.value)}
             type="text"
             placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
+            className="input input-bordered md:w-auto"
           />
         </div>
       </div>
-      {sortMethod.length == 0 && (
-        <div>
-          <div className="mx-auto">
-            <img src={appNotFound} alt="Not Found" className="mx-auto m-8" />
-          </div>
-          <div className="text-center m-8">
-            <h1 className="text-4xl font-bold p-5">OPPS!! APP NOT FOUND</h1>
-            <p>
-              The App you are requesting is not found on our system. please try
-              another apps
-            </p>
-          </div>
-        </div>
-      )}
+      {sortMethod.length == 0 && <AppErrorPage />}
       <div>
-        {sortMethod.map((item) => (
+        {sortMethod?.map((item) => (
           <div
             key={item.id}
             className="flex justify-between items-center shadow-lg hover:shadow-xl py-3"
