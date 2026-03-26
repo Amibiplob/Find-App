@@ -11,7 +11,7 @@ export function AppsProvider({ children }) {
   };
 
   const setAllInstalledApps = (data) => {
-    setInstalledApps([...installedApps, data]);
+    setInstalledApps((prev) => [...prev, data]);
   };
   const setUninstallApp = (data) => {
     const apps = installedApps.filter((item) => item.id !== data.id);

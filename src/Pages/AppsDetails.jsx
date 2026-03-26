@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router-dom";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import review from "../assets/icon-review.png";
 import Charts from "./Charts";
 import { useApps } from "../Context/AppContext";
 import { toast } from "react-toastify";
+import AppErrorPage from "./AppErrorPage";
 export default function AppsDetails() {
   let params = useParams();
   const { installedApps, setAllInstalledApps, setInstalledApps } = useApps();
@@ -14,7 +15,7 @@ export default function AppsDetails() {
   const allApps = useLoaderData();
 
   const detailsApps = allApps.find((item) => item.id == params.id);
-
+  if (!detailsApps) return <AppErrorPage />;
   const {
     id,
     image,

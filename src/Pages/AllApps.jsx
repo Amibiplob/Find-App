@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useApps } from "../Context/AppContext";
-
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import AppErrorPage from "./AppErrorPage";
+import Loading from "./Loading";
 
 export default function AllApps() {
   const { allAppsDetails, setInitialData } = useApps();
@@ -29,7 +29,11 @@ export default function AllApps() {
       setSortDefault(allData);
       setSortMethod(allData);
     }
-  }, [allData]);
+  }, [allData, setInitialData]);
+
+  if (isLoading) return <Loading />;
+  if (isError) return <AppErrorPage />;
+
   // console.log(allAppsDetails);
 
   // console.log("isLoading:", isLoading);
@@ -64,9 +68,7 @@ export default function AllApps() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row gap-3 justify-between m-6">
-        <h1 className="text-2xl">
-          {allAppsDetails?.length} Apps Found
-        </h1>
+        <h1 className="text-2xl">{allAppsDetails?.length} Apps Found</h1>
         <div className="flex flex-col md:flex-row gap-4">
           <select
             defaultValue="Sort By Default"

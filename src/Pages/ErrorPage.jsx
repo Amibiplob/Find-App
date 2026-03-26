@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import notFound from "../assets/error-404.png";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 export default function ErrorPage() {
   return (
     <div>

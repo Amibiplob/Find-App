@@ -3,18 +3,18 @@ import appNotFound from "../assets/App-Error.png";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import { useApps } from "../Context/AppContext";
-import { Bounce, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import AppErrorPage from "./AppErrorPage";
 export default function InstallApps() {
   const { installedApps, setUninstallApp, setInstalledApps } = useApps();
   // console.log(installedApps)
 
-  const [sortMethod, setSortMethod] = useState(installedApps);
+  const [sortMethod, setSortMethod] = useState([]);
   useEffect(() => {
     const allApps = JSON.parse(localStorage.getItem("allApps"));
     // console.log(allApps);
     if (allApps) setInstalledApps(allApps);
-    setSortMethod(allApps);
+   setSortMethod(allApps || []);
   }, []);
 
   // console.log(installedApps);
@@ -56,9 +56,7 @@ export default function InstallApps() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row gap-3 justify-between m-6">
-        <h1 className="text-2xl">
-          {sortMethod?.length} Apps Found
-        </h1>
+        <h1 className="text-2xl">{sortMethod?.length} Apps Found</h1>
         <div className="flex flex-col md:flex-row gap-4">
           <select
             defaultValue="Sort By Default"

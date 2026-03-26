@@ -1,5 +1,5 @@
 import AllApps from "./Pages/AllApps";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Pages/Root";
 import Home from "./Pages/Home";
 import ErrorPage from "./Pages/ErrorPage";

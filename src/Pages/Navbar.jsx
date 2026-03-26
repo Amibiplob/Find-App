@@ -1,7 +1,7 @@
 import { Github } from "lucide-react";
 import React from "react";
-import { Link } from "react-router";
-import { NavLink } from "react-router";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {

@@ -1,6 +1,6 @@
 import React from "react";
 import bannerImg from "../assets/hero.png";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 export default function Banner() {
   const totalStats = [
     {
