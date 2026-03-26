@@ -81,7 +81,7 @@ export default function InstallApps() {
           />
         </div>
       </div>
-      {sortMethod.length == 0 && <AppErrorPage />}
+      {sortMethod?.length == 0 && <AppErrorPage />}
       <div>
         {sortMethod?.map((item) => (
           <div
